@@ -1,9 +1,11 @@
-import { gsap } from 'gsap';
+import { gsap } from './node_modules/gsap';
 
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from './node_modules/gsap/ScrollTrigger.js';
 
 /* The following plugin is a Club GSAP perk */
-import { SplitText } from 'gsap/SplitText';
+import { SplitText } from './node_modules/gsap/SplitText.js';
+
+gsap.to('.box', { x: 100 });
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -94,8 +96,9 @@ function splitElements() {
 
     //use our custom effects called slideIn and slideOut
     effectsTimeline
-      .slideIn(split.chars, { y: 100, ease: 'back' })
-      .slideOut(split.chars, { y: -100, duration: 0.2 });
+      .slideIn(split.words, { y: 100, ease: 'back' })
+      .slideOut(split.words, { y: -100, duration: 0.2 });
   });
 }
+
 splitElements();
